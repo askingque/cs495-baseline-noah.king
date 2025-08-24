@@ -14,6 +14,10 @@ class Test_Normalize_and_Count(unittest.TestCase):
     def test_no_match(self):
         self.assertEqual(normalize_and_count("  Hello   World  ", "goodbye"),
                          ('hello world', 0))
+        
+    def test_letter(self):
+        self.assertEqual(normalize_and_count("  Hello   World  ", "l"),
+                         ('hello world', 3))
 
 if __name__ == '__main__':
     unittest.main()
